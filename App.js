@@ -1,7 +1,16 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity, Keyboard, ScrollView } from 'react-native';
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  KeyboardAvoidingView,
+  TextInput,
+  TouchableOpacity,
+  Keyboard,
+  ScrollView,
+} from "react-native";
 
-import Task from './components/Task';
+import Task from "./components/Task";
 
 export default function App() {
   const [task, setTask] = useState();
@@ -28,13 +37,16 @@ export default function App() {
         keyboardShouldPersistTaps="handled"
       >
         <View style={styles.tasksWrapper}>
-          <Text style={styles.sectionTitle}>Today's Taks</Text>
+          <Text style={styles.sectionTitle}>Today's Taksssssssssss</Text>
 
           <View style={styles.items}>
             {/* { tempat task yang akan muncul } */}
             {taskItems.map((item, index) => {
               return (
-                <TouchableOpacity key={index} onPress={() => completeTask(index)}>
+                <TouchableOpacity
+                  key={index}
+                  onPress={() => completeTask(index)}
+                >
                   <Task text={item} />
                 </TouchableOpacity>
               );
@@ -43,8 +55,16 @@ export default function App() {
         </View>
       </ScrollView>
 
-      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.writeTaskWrapper}>
-        <TextInput style={styles.input} placeholder={'Tulis task disini'} value={task} onChangeText={(text) => setTask(text)} />
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.writeTaskWrapper}
+      >
+        <TextInput
+          style={styles.input}
+          placeholder={"Tulis task disini"}
+          value={task}
+          onChangeText={(text) => setTask(text)}
+        />
 
         <TouchableOpacity onPress={() => handleAddTask()}>
           <View style={styles.addwrapper}>
@@ -59,7 +79,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E8Eaed',
+    backgroundColor: "#E8Eaed",
   },
   tasksWrapper: {
     paddingTop: 80,
@@ -67,36 +87,36 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   items: {
     marginTop: 20,
   },
   writeTaskWrapper: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 10,
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
   },
   input: {
     paddingVertical: 15,
     paddingHorizontal: 15,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 60,
-    borderColor: '#C0c0c0',
+    borderColor: "#C0c0c0",
     borderWidth: 1,
     width: 250,
   },
   addwrapper: {
     width: 60,
     height: 60,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 60,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderColor: '#C0c0c0',
+    justifyContent: "center",
+    alignItems: "center",
+    borderColor: "#C0c0c0",
     borderWidth: 1,
   },
   addText: {},
